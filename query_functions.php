@@ -15,7 +15,9 @@ function getstates() {
         if (!in_array($state['areaName'], $areas)) {
             array_push($areas, $state['areaName']);
         }
-        array_push($states, $state);
+        if ($state['stateImg']) {
+            array_push($states, $state);
+        }
     }
 
     $data['areas'] = $areas;
